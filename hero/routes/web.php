@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home/{name}', function($name){
-    return view('home', ['name' =>$name]);
-    //return"Barbaro ".$name."¡ estas ruteando";
-})->where('name','[A-Za-z]+'); //Para que permita solo caracteres del alfabeto
+Route::get('/admin/{name}', [AdminController::class, 'index']);
+
+
+//Route::get('/admin', 'AdminController@index');

@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <h1>Barbaro {{ $name }}¡ estas ruteando, eso me alegra mucho</h1>
+    
+    <h1>Por fin funciono {{$name}} </h1>
 </body>
 
 </html>
