@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\EnemyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/{name}', [AdminController::class, 'index']);
+Route::group(['prefix' => 'admin'], function(){
 
-
-//Route::get('/admin', 'AdminController@index');
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('heroes', [HeroController::class, 'index'])->name('admin.heroes');
+    Route::get('items', [ItemController::class, 'index'])->name('admin.items');
+    Route::get('enemies', [EnemyController::class, 'index'])->name('admin.enemies');
+});
