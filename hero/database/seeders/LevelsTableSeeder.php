@@ -14,6 +14,8 @@ class LevelsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0'); //Reinicia a 0 las llaves CMD php artisan db:seed
+        DB::table('levels')->truncate();//Elimina registros
         $xp = 100;
 
         for ($i = 0; $i < 10; $i++) {
