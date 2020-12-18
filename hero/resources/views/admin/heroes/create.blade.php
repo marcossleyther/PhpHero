@@ -3,38 +3,39 @@
 @section('content')
     <h1>Crear Nuevo Heroe</h1>
 
-    <form action="#" method='post'>
+    <form action="{{ route('admin.heroes.store') }}" method='post'>
+        @csrf
         <div class="form-group">
             <label for="name">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Ingrese un nombre">
+            <input required type="text" class="form-control" name="name" id="name" placeholder="Ingrese un nombre">
         </div>
 
         <div class="form-group">
-            <label for="ho">HP</label>
-            <input type="number" class="form-control" id="hp" placeholder="Ingrese los puntos vida">
+            <label for="hp">HP</label>
+            <input required type="number" class="form-control" name="hp" id="hp" placeholder="Ingrese los puntos vida">
         </div>
 
         <div class="form-group">
             <label for="atq">Ataque</label>
-            <input type="tenumberxt" class="form-control" id="atq" placeholder="Ingrese los puntos ataque">
+            <input required type="tenumberxt" class="form-control" name="atq" id="atq" placeholder="Ingrese los puntos ataque">
         </div>
 
         <div class="form-group">
             <label for="def">Defensa</label>
-            <input type="number" class="form-control" id="def" placeholder="Ingrese los puntos defensa">
+            <input required type="number" class="form-control" name="def" id="def" placeholder="Ingrese los puntos defensa">
         </div>
 
         <div class="form-group">
             <label for="luck">Suerte</label>
-            <input type="number" class="form-control" id="luck" placeholder="Ingrese los puntos suerte">
+            <input required type="number" class="form-control" name="luck" id="luck" placeholder="Ingrese los puntos suerte">
         </div>
 
         <div class="form-group">
             <label for="conins">Monedas</label>
-            <input type="number" class="form-control" id="conins" placeholder="Ingrese la cantidad de monedas">
+            <input required type="number" class="form-control" name="conins" id="conins" placeholder="Ingrese la cantidad de monedas">
         </div>
 
-        <button type="submit" class="btn btn-primary">Crear</button>
+        <button type="submit" class="btn btn-success">Crear</button>
 
     </form>
 

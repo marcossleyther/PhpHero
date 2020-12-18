@@ -1,0 +1,42 @@
+@extends('layouts.app')
+
+@section('content')
+    <h1>Editar Heroe</h1>
+
+    <form action="{{ route('admin.heroes.update') }}" method='post'>
+        @csrf
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input required type="text" class="form-control" name="name" value="{{ $hero->name}}" id="name" placeholder="Ingrese un nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="hp">HP</label>
+            <input required type="number" class="form-control" name="hp" value="{{ $hero->hp}}" id="hp" placeholder="Ingrese los puntos vida">
+        </div>
+
+        <div class="form-group">
+            <label for="atq">Ataque</label>
+            <input required type="tenumberxt" class="form-control" name="atq" value="{{ $hero->atq}}" id="atq" placeholder="Ingrese los puntos ataque">
+        </div>
+
+        <div class="form-group">
+            <label for="def">Defensa</label>
+            <input required type="number" class="form-control" name="def" value="{{ $hero->def}}" id="def" placeholder="Ingrese los puntos defensa">
+        </div>
+
+        <div class="form-group">
+            <label for="luck">Suerte</label>
+            <input required type="number" class="form-control" name="luck" value="{{ $hero->luck}}" id="luck" placeholder="Ingrese los puntos suerte">
+        </div>
+
+        <div class="form-group">
+            <label for="conins">Monedas</label>
+            <input required type="number" class="form-control" name="conins" value="{{ $hero->conins}}"  id="conins" placeholder="Ingrese la cantidad de monedas">
+        </div>
+
+        <button type="submit" class="btn btn-warning">Editar</button>
+
+    </form>
+
+@endsection
